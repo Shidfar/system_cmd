@@ -11,7 +11,6 @@ string exec(char* cmd)
 {
 //    Replace popen and pclose with _popen and _pclose for Windows.
     FILE* pipe = popen(cmd, "r");
-
     if (!pipe) return "ERROR";
     char buffer[128];
     string result = "";
@@ -26,11 +25,11 @@ string exec(char* cmd)
 
 int main()
 {
-    string res = exec("ifconfig | perl -nle'/dr:(\\S+)/ && print $1'");
+    string res = exec((char *) "ifconfig | perl -nle'/dr:(\\S+)/ && print $1'");
     cout<<" > Internal address:" <<endl;
     cout<<res<<endl;
     cout<<" > External address:" <<endl;
-    res = exec("dig +short myip.opendns.com @resolver1.opendns.com");
+    res = exec((char *) "dig +short myip.opendns.com @resolver1.opendns.com");
     cout<<res<<endl;
 
     return 0;
