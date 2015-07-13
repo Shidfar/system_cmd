@@ -22,6 +22,8 @@ string exec(char* cmd)
 
 int main()
 {
+
+//    sleep 1; xset dpms force off turns off the screen
     string res = exec("ifconfig");
     cout<<" *********************** " <<endl;
     cout<<" >> " <<res<<endl;
