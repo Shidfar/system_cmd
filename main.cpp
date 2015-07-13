@@ -25,14 +25,14 @@ string exec(char* cmd)
 
 int main()
 {
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 //    sleep 1; xset dpms force off turns off the screen
     string res = exec("ifconfig");
     cout<<" *********************** " <<endl;
     cout<<" >> " <<res<<endl;
     cout<<" *********************** " <<endl;
-=======
+//=======
     string res = exec((char *) "ifconfig | perl -nle'/dr:(\\S+)/ && print $1'");
     cout<<" > Internal address:" <<endl;
     cout<<res<<endl;
@@ -40,6 +40,6 @@ int main()
     res = exec((char *) "dig +short myip.opendns.com @resolver1.opendns.com");
     cout<<res<<endl;
 
->>>>>>> 596626a10d41b6443c9a3e61fda569b5135f699e
+//>>>>>>> 596626a10d41b6443c9a3e61fda569b5135f699e
     return 0;
 }
